@@ -13,7 +13,7 @@ app.get("/api/v1/ip", (req, res) => {
   return res.status(200).json({
     status: "success",
     data: {
-      ...req.headers,
+      ip: req.headers["x-forwarded-for"],
     },
   });
 });
